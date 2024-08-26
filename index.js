@@ -46,7 +46,7 @@ mongoose.connect('mongodb://10.10.21.48:27017/mark10', {
           conversations.set(phoneNumber, conversation);
         }
 
-        await procesarMensaje(message, conversation); 
+        await procesarMensaje(message, conversation, client); 
       } catch (error) {
         console.error("Error al procesar el mensaje:", error);
         await message.reply("Lo siento, ocurrió un error. Por favor, inténtalo de nuevo más tarde."); 

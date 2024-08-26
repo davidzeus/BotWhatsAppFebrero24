@@ -6,7 +6,7 @@ const {
 const respuestas = require("../respuestas"); 
 const { Conversation, ClaveAcceso } = require('../models/conversationModel'); 
 
-async function procesarMensaje(message, conversation) {
+async function procesarMensaje(message, conversation, client) {
   const selectedOption = parseInt(message.body);
 
   let conversationDB; 
@@ -74,6 +74,12 @@ async function procesarMensaje(message, conversation) {
                       try {
                           const nuevaClaveAcceso = new ClaveAcceso(conversation.claveAccesoData);
                           await nuevaClaveAcceso.save();
+
+                          // Enviar mensaje a un número específico (reemplaza con el número real)
+                          const numeroDestino = "5491171011639@c.us"; // Asegúrate de incluir el código de país
+                          const mensajeParaDestino = `Solicitud de nueva clave de acceso:\nSistema: ${conversation.claveAccesoData.sistema}\nEmail: ${conversation.claveAccesoData.email}\nLegajo: ${conversation.claveAccesoData.legajo}`;
+                          await client.sendMessage(numeroDestino, mensajeParaDestino);
+
                       } catch (err) {
                           console.error('Error al guardar los datos de recuperación de clave:', err);
                           respuesta = "Lo siento, ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.";
