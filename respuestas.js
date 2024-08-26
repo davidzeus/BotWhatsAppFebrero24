@@ -4,8 +4,8 @@ const respInicio = [
   "*Selecciona con que area deseas conversar:*",
   "1: 🌎 Departamento de Redes (Wifi, Proxys, etc)",
   "2: 🖥️ Departamento Soporte Tecnico (CPU, Impresoras, etc)",
-  "3: 👨‍💻 Departamento de Sistemas (Hc, Camas, etc)",
-  "4: 🧑‍💼 Dirección de Informática (Secretaria)",
+  "3: 👨‍💻 Departamento de Sistemas (Hc, Camas, etc)"
+  /* "4: 🧑‍💼 Dirección de Informática (Secretaria)", */
 ];
 
 /* SubMenues */
@@ -26,8 +26,8 @@ const subMenuSistemas = [
         "- Sistema (HC, Camas, MultiStock, etc)\n" +
         "- Nombre y Apellido\n" +
         "- Legajo / DNI\n" +
-        " - Email personal\n" +
-        "Si es personal médico, numero de matricula"
+        "- Email personal\n" +
+        "* Si es personal médico, número de matricula"
     }
 ];
 
@@ -65,11 +65,11 @@ const subMenuRedes = [
     {
         option: "¿que es el cable utp?",
         response: "El cable UTP, por sus siglas en inglés -Unshielded Twisted Pair-, es un tipo de cable de red que se compone de pares de hilos de cobre trenzados entre sí."
-    },
-    {
+    }
+   /*  {
         option: "¿Alejandro se la come?",
         response: "Por supuesto que si señores 😂"
-    }
+    } */
 ];
 
 module.exports = {
