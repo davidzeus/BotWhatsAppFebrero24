@@ -1,10 +1,10 @@
 // Opciones de respuesta inicio de converzación
 const respInicio = [
   "👋 ¡Hola! ¿En qué puedo ayudarte?",
-  "*Selecciona con que area deseas conversar:*",
-  "1: 🌎 Departamento de Redes (Wifi, Proxys, etc)",
-  "2: 🖥️ Departamento Soporte Tecnico (CPU, Impresoras, etc)",
-  "3: 👨‍💻 Departamento de Sistemas (Hc, Camas, etc)"
+  "*Selecciona el area:*",
+  /* "1: 🌎 Departamento de Redes (Wifi, Proxys, etc)",
+  "2: 🖥️ Departamento Soporte Tecnico (CPU, Impresoras, etc)", */
+  "1: 👨‍💻 Departamento de Sistemas"
   /* "4: 🧑‍💼 Dirección de Informática (Secretaria)", */
 ];
 
@@ -12,23 +12,45 @@ const respInicio = [
 // Sistemas
 const subMenuSistemas = [
     {
-        option: "Olvide mi clave de acceso",
-        response: "Deberás solicitar una nueva clave de acceso enviando un email a Sistemas@clinicas.uba.ar indicando:\n" +
-            "- Sistema (HC, Camas, MultiStock, etc)\n" +
-            "- Nombre y Apellido\n" +
-            "- Legajo / DNI\n" +
-            "Recibirás como respuesta una nueva clave de acceso."
+        option: "Nuevo Usuario",
+        response: "Enviar Email a sistemas@clinicas.uba.ar \n" +
+    "Adjuntando Nota autorizada por el Jefe/a del Servicio y debe contener los siguientes datos:\n" +
+    "* Apellido y Nombre del usuario \n"+
+    "* Legajo y DNI \n"+
+    "* Matrícula Profesional \n"+
+    "* Mail Personal \n"+
+    "* Indicar sistema (HC, Camas, MultiStock, etc)"
     },
     {
-        option: "No tengo usuario del sistema",
-        response: "Deberas solicitar la creación de usuario por nota, firmada por el jefe de servicio y enviarla adjunta al email: Sistemas@clinicas.uba.ar \n" +
-        "con los siguientes datos:\n" +
-        "- Sistema (HC, Camas, MultiStock, etc)\n" +
-        "- Nombre y Apellido\n" +
-        "- Legajo / DNI\n" +
-        "- Email personal\n" +
-        "* Si es personal médico, número de matricula"
+        option: "Blanqueo de clave",
+        response: "Enviar Email a sistemas@clinicas.uba.ar solicitando el blanqueo desde su mail particular. \n"
+    },
+    {
+        option: "Baja Usuario",
+        response: "Enviar Email a sistemas@clinicas.uba.ar. \n" +
+        "Adjuntando Nota solicitando la baja especificando los datos del usuario, firmada por el Jefe/a del Servicio. \n"
+    },
+    {
+        option: "Usuario Portal web - Perfil Personal del Hospital",
+        response: "Si al entrar al portal sólo visualiza Mis Turnos y Sacar Turno,\n" +
+        "Significa que no tiene el perfil del personal del hospital.\n" +
+        "Para ello debe ir a MI PERFIL, AJUSTES,  y en la sección inferior indicar que es PERSONAL DEL HOSPITAL y completar los datos faltantes, luego se verificará el tipo de permiso correspondiente."
+    },
+    {
+        option: "Inconvenientes con el Sistema",
+        response: "* Indicar Sistema \n"+
+        "* Inconveniente \n"+
+        "* Realizar de ser necesario una Captura de Pantalla \n"+
+        "A la brevedad nuestro personal se estará comunicado, para despejar dudas o informar si el inconveniente fue resuelto."
+    },
+    {
+        option: "Solicitud de Modificaciones en el Sistema",
+        response: "Enviar Email a sistemas@clinicas.uba.ar \n"+
+        "* Sistema \n" +
+        "* Requerimientos \n"+
+        "* Un email y telefono de contacto \n"
     }
+
 ];
 
 // Tecnicos
