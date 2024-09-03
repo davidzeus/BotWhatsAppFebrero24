@@ -7,18 +7,18 @@ function generarMenuPrincipal() {
 function generarSubMenu(departamento) {
   switch (departamento) {
     case 1: // sistemas
-    return respuestas.subMenuSistemas
+      return respuestas.subMenuSistemas
         .map((option, index) => `${index + 1}: ${option.option}`)
         .join("\n") + "\n\n0: Volver al menú principal";
-     
+
     case 2: // Técnicos
       return respuestas.subMenuTecnicos
         .map((option, index) => `${index + 1}: ${option.option}`)
         .join("\n") + "\n\n0: Volver al menú principal";
     case 3: // Redes
-    return respuestas.subMenuRedes
-    .map((option, index) => `${index + 1}: ${option.option}`)
-    .join("\n") + "\n\n0: Volver al menú principal";
+      return respuestas.subMenuRedes
+        .map((option, index) => `${index + 1}: ${option.option}`)
+        .join("\n") + "\n\n0: Volver al menú principal";
     default:
       return "Departamento no válido. Por favor, selecciona una opción válida.";
   }
@@ -27,7 +27,11 @@ function generarSubMenu(departamento) {
 function generarRespuestaSubMenu(departamento, opcion) {
   switch (departamento) {
     case 1: // Sistemas
-      return respuestas.subMenuSistemas[opcion - 1]?.response || "Opción no válida."; 
+      if (opcion === 5) {
+        return "__MANUAL_INTERACTION__"; // Valor especial para indicar interacción manual
+      } else {
+        return respuestas.subMenuSistemas[opcion - 1]?.response || "Opción no válida.";
+      }
     case 2: // Técnicos
       return respuestas.subMenuTecnicos[opcion - 1]?.response || "Opción no válida.";
     case 3: // redes
