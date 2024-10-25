@@ -4,9 +4,11 @@ const conversationSchema = new mongoose.Schema({
     phoneNumber: { type: String, required: true },
     messages: [{
         role: { type: String, enum: ['user', 'bot'], required: true },
-        content: { type: String, required: true },
-        timestamp: { type: Date, default: Date.now }
-    }]
+        content: { type: String },
+        timestamp: { type: Date, default: Date.now },
+        manualInteraction: { type: Boolean },
+        finalizado: { type: Boolean}
+    }],
 });
 
 const Conversation = mongoose.model('Conversation', conversationSchema);

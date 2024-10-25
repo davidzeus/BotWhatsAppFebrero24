@@ -1,48 +1,19 @@
-const respuestas = require("../respuestas"); // Asegúrate de que la ruta sea correcta
-
-function generarMenuPrincipal() {
-  return respuestas.respInicio.join("\n");
-}
-
-function generarSubMenu(departamento) {
-  switch (departamento) {
-    case 1: // sistemas
-      return respuestas.subMenuSistemas
-        .map((option, index) => `${index + 1}: ${option.option}`)
-        .join("\n") + "\n\n0: Volver al menú principal";
-
-    case 2: // Técnicos
-      return respuestas.subMenuTecnicos
-        .map((option, index) => `${index + 1}: ${option.option}`)
-        .join("\n") + "\n\n0: Volver al menú principal";
-    case 3: // Redes
-      return respuestas.subMenuRedes
-        .map((option, index) => `${index + 1}: ${option.option}`)
-        .join("\n") + "\n\n0: Volver al menú principal";
-    default:
-      return "Departamento no válido. Por favor, selecciona una opción válida.";
-  }
-}
-
-function generarRespuestaSubMenu(departamento, opcion) {
-  switch (departamento) {
-    case 1: // Sistemas
-      if (opcion === 5) {
-        return "__MANUAL_INTERACTION__"; // Valor especial para indicar interacción manual
-      } else {
-        return respuestas.subMenuSistemas[opcion - 1]?.response || "Opción no válida.";
-      }
-    case 2: // Técnicos
-      return respuestas.subMenuTecnicos[opcion - 1]?.response || "Opción no válida.";
-    case 3: // redes
-      return respuestas.subMenuRedes[opcion - 1]?.response || "Opción no válida.";
-    default:
-      return "Departamento o opción no válidos.";
-  }
-}
+const respuestas = require("../respuestas"); 
 
 module.exports = {
-  generarMenuPrincipal,
-  generarSubMenu,
-  generarRespuestaSubMenu
+  generarMenuPrincipal: () => respuestas.respInicio.join("\n"),
+  generarSubMenu: (departamento) => {
+    switch (departamento) {
+      case 1: return generarSubMenu(respuestas.subMenuSistemas);
+      case 2: return generarSubMenu(respuestas.subMenuTecnicos);
+      case 3: return respuestas.subMenuRedes;
+      default: return "Departamento no válido. Por favor, selecciona una opción válida.";
+    }
+  }
 };
+
+function generarSubMenu(options) {
+  return options
+    .map((option, index) => `${index + 1}: ${option.option}`)
+    .join("\n") + "\n\n0: Volver al menú principal";
+}
