@@ -36,12 +36,12 @@ const respuestas = {
       },
       {
         option: "*Usuario Portal web*",
-        response: "Si al entrar al portal sólo visualiza 'Mis Turnos' y 'Sacar Turno',\n" +
-          "Significa que no tiene el perfil del personal del hospital. \n" +
-          "Debe ir a MI PERFIL, AJUSTES, y en la sección inferior indicar que es PERSONAL DEL HOSPITAL y completar los datos faltantes."
+        response: "Es profesional del hospital y no puede evolucionar o entrar a la Historia Clinica. \n" +
+          "Significa que no tiene el perfil de 'medico'. \n" +
+          "Debe ir a MI PERFIL, AJUSTES, y en la sección inferior indicar que es PERSONAL DEL HOSPITAL y completar matricula profesional."
       },
       {
-        option: "*No tengo Sistema*",
+        option: "*Chatear con nosotros*",
         response: "* Indicar Sistema \n" +
           "* Inconveniente \n" +
           "* Realizar de ser necesario una Captura de Pantalla \n" +
@@ -66,7 +66,8 @@ const respuestas = {
       {
         option: " *Solicitar asistencia técnica para Impresora* ",
         response: "Verifique que esté conectada a la corriente y reinicie el equipo donde está conectada la impresora.\n" +
-          "Si el problema persiste, indique los números del VNC (Icono celeste con un ojito en la barra de tareas)."
+          "Si el problema persiste, indique los números del VNC (Icono celeste con un ojito en la barra de tareas). \n" +
+          "Aguarde y será atendido por un técnico."
       },
       {
         option: " *Cambiar la configuración del proxy en Chrome* ",
@@ -75,7 +76,7 @@ const respuestas = {
           "Puerto: 8080"
       },
       {
-        option: "*Hablar con un técnico*",
+        option: "*Chatear con un técnico*",
         response: "Aguarde y será atendido por un técnico."
       }
     ],
